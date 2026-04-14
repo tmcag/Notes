@@ -12,3 +12,5 @@ Route::get('/about', function () {
 });
 
 Route::get('/controller/{id}', [ MainController::class, 'index' ]);
+Route::get('/controller2/{id}', [ MainController::class, 'controller2' ]);
+Route::get('/controller3/{id}', [ MainController::class, 'controller3' ]);
