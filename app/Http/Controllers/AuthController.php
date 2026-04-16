@@ -50,17 +50,17 @@ class AuthController extends Controller
         // Check if password is correct
         if (!password_verify($password, $user->password)) return redirect()->back()->with('authError', $AUTH_ERROR_MESSAGE);
 
-        User::where('user_id', $user->user_id)->update(['last_login' => now()]);
+        User::where('id', $user->id)->update(['last_login' => now()]);
 
-        // Create Session 
+        // Create Session
         session([
             'user' => [
-                'id' => $user->user_id,
+                'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email
             ]
         ]);
 
-        echo 'success'; 
+        return redirect('/');
     }
 }

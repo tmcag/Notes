@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id()->primary();
-            $table->uuid('user_id');
+            $table->foreignUuid('user_id');
             $table->string('title', 255);
             $table->text('text')->nullable();
             $table->timestamps();

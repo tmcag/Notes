@@ -8,9 +8,9 @@
         <p class="lead">Faça login na sua conta para continuar</p>
     </div>
 
-    <form action="/auth" method="POST">
+    <form action="/login" method="POST">
         @csrf
-        
+
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" oninput="onChangeInput(event)">
@@ -32,7 +32,7 @@
                 @enderror
             </div>
         </div>
-        
+
         <button type="submit" class="btn btn-primary">Login</button>
 
         <p class="mt-5 text-center text-muted small">© {{ date('Y') }} Notes - Todos os direitos reservados</p>

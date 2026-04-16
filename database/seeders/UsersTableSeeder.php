@@ -16,21 +16,21 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'user_id' => '123e4567-e89b-12d3-a456-426614174000',
+                'id' => '123e4567-e89b-12d3-a456-426614174000',
                 'name' => 'John Doe',
                 'email' => 'john.doe@example.com',
                 'password' => $this->getPasswordHash(),
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'user_id' => '123e4567-e89b-12d3-a456-426614174001',
+                'id' => '123e4567-e89b-12d3-a456-426614174001',
                 'name' => 'Alice Smith',
                 'email' => 'alice.smith@example.com',
                 'password' => $this->getPasswordHash(),
                 'created_at' => date('Y-m-d H:i:s'),
             ],
              [
-                'user_id' => '123e4567-e89b-12d3-a456-426614174002',
+                'id' => '123e4567-e89b-12d3-a456-426614174002',
                 'name' => 'Bob Johnson',
                 'email' => 'bob.johnson@example.com',
                 'password' => $this->getPasswordHash(),
