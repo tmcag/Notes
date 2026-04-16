@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Note extends Model {
+    // O Id do usuário é chave estrangeira na tabela Notes
+    // A nota pertence ao usuário
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+}
