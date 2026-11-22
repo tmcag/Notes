@@ -107,7 +107,7 @@
             <p class="text-center text-sm text-gray-500 mt-6">
                 Já tem uma conta?
 
-                <a href="#" class="font-semibold underline text-emerald-600 hover:text-emerald-700 transition">
+                <a href="/login" class="font-semibold underline text-emerald-600 hover:text-emerald-700 transition">
                     Entrar
                 </a>
             </p>
