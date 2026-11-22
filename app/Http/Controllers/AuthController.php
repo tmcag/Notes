@@ -62,6 +62,40 @@ class AuthController extends Controller
         return redirect('/');
     }
 
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    public function createUser(Request $request)
+    {
+        $rules = [
+            'username' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password'
+        ];
+
+        $messages = [
+            'username.required' => 'Campo obrigatório',
+            'email.required' => 'Campo obrigatório.',
+            'email.unique' => 'Este e-mail já está cadastrado.',
+            'password.required' => 'Campo obrigatório.',
+            'confirm_password.required' => 'Campo obrigatório.',
+            'confirm_password.same' => 'As senhas não se coincidem.'
+        ];
+
+        $request->validate($rules, $messages);
+
+        User::query()->create([
+            'username' => $request->input('username'),
+            'email' => $request->input('email'),
+            'password' => password_hash($request->input('password'), PASSWORD_DEFAULT)
+        ]);
+
+        return redirect('/login');
+    }
+
     public function logout(): RedirectResponse
     {
         session()->forget('user');

@@ -10,6 +10,12 @@ class User extends Model
 {
     use HasUuids;
 
+    protected $fillable = [
+        'email',
+        'password',
+        'username'
+    ];
+
     protected $hidden = [
         'password'
     ];

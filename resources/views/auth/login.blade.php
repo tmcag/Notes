@@ -51,10 +51,6 @@
                         <label for="password" class="block text-sm font-medium text-gray-700">
                             Senha
                         </label>
-
-                        <a href="#" class="text-xs font-medium text-emerald-600 hover:text-emerald-700 transition">
-                            Esqueceu a senha?
-                        </a>
                     </div>
 
                     <input
@@ -82,7 +78,7 @@
             <p class="text-center text-sm text-gray-500 mt-6">
                 Ainda não tem uma conta?
 
-                <a href="#" class="font-semibold underline text-emerald-600 hover:text-emerald-700 transition">
+                <a href="{{ route('register') }}" class="font-semibold underline text-emerald-600 hover:text-emerald-700 transition">
                     Cadastre-se
                 </a>
             </p>

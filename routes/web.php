@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware([CheckUserIsNotLogged::class])->group(function () {
     Route::get('/login', [AuthController::class, 'login']);
     Route::post('/login', [AuthController::class, 'authenticate']);
+
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'createUser'])->name('register.create.user');
 });
 
 Route::middleware([CheckUserIsLogged::class])->group(function () {
